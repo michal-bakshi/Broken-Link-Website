@@ -1,7 +1,6 @@
 import { IconCode, IconHeart, IconStar } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import { Box, Container, SimpleGrid } from '@mantine/core';
-import { Text } from '@mantine/core';
+import { Box, Container, SimpleGrid, Text } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import { useNavigationLinks } from '@/components/Hooks/useNavigationLinks';
 import { theme } from '@/theme';
