@@ -149,6 +149,7 @@
       "empty_state": "הכנסו URL או מאגר למעלה כדי להתחיל סריקה של קישורים שבורים",
       "loading": "סורק...",
       "response_time": "זמן תגובה: {{responseTime}}ms",
+      "seconds": "ש",
       "working_links": "קישורים תקינים",
       "broken_links": "קישורים שבורים",
       "link_status_header": "סטטוס קישורים",

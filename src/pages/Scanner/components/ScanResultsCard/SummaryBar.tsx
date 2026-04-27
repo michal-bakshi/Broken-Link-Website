@@ -17,9 +17,9 @@ export const SummaryBar = ({ total, timeInSeconds, isDark }: SummaryBarProps) =>
         {t('scanner_page.scan_results_card.link', { count: total })}
       </div>
       <div>{DOT}</div>
-      {/* TODO: Update linter rule to allow text coming from props" */}
-      {/* eslint-disable-next-line i18next/no-literal-string */}
-      <div style={scanPageStyle.summaryTime(isDark)}>{timeInSeconds}s</div>
+      <div style={scanPageStyle.summaryTime(isDark)}>
+        {timeInSeconds} {t('scanner_page.scan_results_card.seconds')}
+      </div>
     </div>
   );
 };
