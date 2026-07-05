@@ -7,9 +7,7 @@ export function render(ui: React.ReactNode) {
   return testingLibraryRender(ui, {
     wrapper: ({ children }: { children: React.ReactNode }) => (
       <MantineProvider theme={theme} env='test'>
-        <DarkModeProvider>
-          {children}
-        </DarkModeProvider>
+        <DarkModeProvider>{children}</DarkModeProvider>
       </MantineProvider>
     ),
   });
