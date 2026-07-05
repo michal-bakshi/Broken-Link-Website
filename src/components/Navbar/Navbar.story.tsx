@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
+import { DarkModeProvider } from '@/context/DarkModeContext';
+import { LanguageProvider } from '@/context/LanguageContext';
 import { theme } from '@/theme';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
@@ -17,7 +19,11 @@ const meta: Meta = {
     (Story) => (
       <MantineProvider theme={theme}>
         <MemoryRouter>
-          <Story />
+          <DarkModeProvider>
+            <LanguageProvider>
+              <Story />
+            </LanguageProvider>
+          </DarkModeProvider>
         </MemoryRouter>
       </MantineProvider>
     ),

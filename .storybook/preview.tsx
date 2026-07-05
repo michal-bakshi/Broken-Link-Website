@@ -4,7 +4,11 @@ import '@mantine/carousel/styles.css';
 import React from 'react';
 import type { Preview } from '@storybook/react';
 import { MantineProvider, useMantineColorScheme } from '@mantine/core';
+import { DarkModeProvider } from '../src/context/DarkModeContext';
+import { LanguageProvider } from '../src/context/LanguageContext';
 import { theme } from '../src/theme';
+
+import '../src/i18';
 
 const preview: Preview = {
   parameters: {
@@ -48,7 +52,11 @@ export const decorators = [
   (Story, context) => (
     <MantineProvider theme={theme}>
       <ColorSchemeWrapper colorScheme={context.globals.colorScheme}>
-        <Story />
+        <DarkModeProvider>
+          <LanguageProvider>
+            <Story />
+          </LanguageProvider>
+        </DarkModeProvider>
       </ColorSchemeWrapper>
     </MantineProvider>
   ),

@@ -3,7 +3,7 @@ import logo from '/logo.svg';
 import { useTranslation } from 'react-i18next';
 import { useNavigationLinks } from '@/components/Hooks/useNavigationLinks';
 import { LANGUAGE_OPTIONS } from '@/constants/languages';
-import { useLanguage } from '../Hooks/useLanguage';
+import { useLanguage } from '@/context/LanguageContext';
 import { LinkButton, LinkTarget } from '../UI/Button/LinkButton';
 import { Link } from '../UI/Link/Link';
 import { Select } from '../UI/Select/Select';
