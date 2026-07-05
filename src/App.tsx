@@ -5,6 +5,8 @@ import './app.css';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { DirectionProvider, MantineProvider } from '@mantine/core';
+import { DarkModeProvider } from '@/context/DarkModeContext';
+import { LanguageProvider } from '@/context/LanguageContext';
 import { Router } from './Router';
 import { theme } from './theme';
 
@@ -15,7 +17,11 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <DirectionProvider detectDirection>
         <MantineProvider theme={theme}>
-          <Router />
+          <DarkModeProvider>
+            <LanguageProvider>
+              <Router />
+            </LanguageProvider>
+          </DarkModeProvider>
         </MantineProvider>
       </DirectionProvider>
     </QueryClientProvider>
