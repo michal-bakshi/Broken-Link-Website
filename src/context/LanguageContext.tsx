@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, type ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { DEFAULT_LANGUAGE_LABEL, SUPPORTED_LANGUAGES } from '@/constants/languages';
 
 export interface LanguageContextValue {

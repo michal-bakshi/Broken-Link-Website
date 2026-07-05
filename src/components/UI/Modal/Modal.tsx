@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import { Modal as MantineModal, ModalProps } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { useIsDark } from '@/components/Hooks/useIsDark';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { getModalContentStyles } from './styles';
 
 interface SharedModalProps extends ModalProps {
@@ -17,7 +17,7 @@ export const Modal = ({
 }: SharedModalProps) => {
   const isMobile = useMediaQuery('(max-width: 48em)');
   const resolvedFullScreen = fullScreen ?? isMobile;
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const baseContentStyles = getModalContentStyles(isDark);
   const resolvedStyles: ModalProps['styles'] = {
     ...styles,
