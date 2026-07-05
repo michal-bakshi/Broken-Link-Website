@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useMemo, type ReactNode } from 
 import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { DEFAULT_LANGUAGE_LABEL, SUPPORTED_LANGUAGES } from '@/constants/languages';
+import { LANGUAGE_CONTEXT_ERROR } from '@/constants/context.consts';
 
 export interface LanguageContextValue {
   currentLanguageLabel: string;
@@ -45,7 +46,7 @@ export function useLanguage(): LanguageContextValue {
   const context = useContext(LanguageContext);
 
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    throw new Error(LANGUAGE_CONTEXT_ERROR);
   }
 
   return context;

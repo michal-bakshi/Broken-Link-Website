@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo, type ReactNode } from 'react';
 import { useMantineColorScheme } from '@mantine/core';
+import { DARK_MODE_CONTEXT_ERROR } from '@/constants/context.consts';
 
 export interface DarkModeContextValue {
   isDark: boolean;
@@ -24,7 +25,7 @@ export function useDarkMode(): DarkModeContextValue {
   const context = useContext(DarkModeContext);
 
   if (!context) {
-    throw new Error('useDarkMode must be used within a DarkModeProvider');
+    throw new Error(DARK_MODE_CONTEXT_ERROR);
   }
 
   return context;
