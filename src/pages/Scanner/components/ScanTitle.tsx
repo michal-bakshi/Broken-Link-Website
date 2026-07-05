@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { useIsDark } from '@/components/Hooks/useIsDark';
 import { ColoredTitle } from '@/components/UI/ColoredTitle/ColoredTitle';
 import { Typography } from '@/components/UI/Typography/Typography';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { scanPageStyle } from './styles';
 
 export const ScanTitlePage = () => {
   const { t } = useTranslation();
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const titleColor = isDark ? scanPageStyle.whiteText : scanPageStyle.blackText;
 
   return (

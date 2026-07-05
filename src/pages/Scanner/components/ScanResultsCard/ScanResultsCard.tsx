@@ -1,4 +1,4 @@
-import { useIsDark } from '@/components/Hooks/useIsDark';
+import { useDarkMode } from '@/context/DarkModeContext';
 import {
   MultipleResultData,
   ResolvedKind,
@@ -13,7 +13,7 @@ import { MultipleResults } from './MultipleResults';
 import { SingleResult } from './SingleResult';
 
 export const ScanResultsCard = ({ results, loading, error }: ScanResultsCardProps) => {
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const resolved = resolveScanResults(results);
 
   if (loading) {

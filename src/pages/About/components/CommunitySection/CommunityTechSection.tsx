@@ -5,15 +5,15 @@ import {
   IconBrandTypescript,
 } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import { useIsDark } from '@/components/Hooks/useIsDark';
 import { LinkButton, LinkTarget } from '@/components/UI/Button/LinkButton';
 import { Typography } from '@/components/UI/Typography/Typography';
 import { EXTERNAL_LINKS } from '@/constants/links.consts';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { communitySectionStyle } from './styles';
 
 export const CommunityTechSection = () => {
   const { t } = useTranslation();
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const iconSize = 18;
 
   return (

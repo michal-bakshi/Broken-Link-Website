@@ -1,6 +1,6 @@
-import { useIsDark } from '@/components/Hooks/useIsDark';
 import { Card } from '@/components/UI/Card/Card';
 import { Typography } from '@/components/UI/Typography/Typography';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { Icon } from './Icon';
 import { IconType } from './IconTypes';
 import { featureCardStyles } from './styles';
@@ -12,7 +12,7 @@ interface FeatureCardProps {
 }
 
 export const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const style = featureCardStyles(isDark);
   return (
     <Card style={style.featureCard}>

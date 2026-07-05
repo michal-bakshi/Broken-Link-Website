@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 import { Text as MantineText, TextProps } from '@mantine/core';
-import { useIsDark } from '@/components/Hooks/useIsDark';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { theme } from '@/theme';
 import { getTypographyAutoColor, typographyVariants } from './styles';
 import { CustomSize } from './types';
@@ -28,7 +28,7 @@ export const Typography = ({
   color,
   ...props
 }: SharedTypographyProps) => {
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const variantStyle = typographyVariants[variant] ?? {};
 
   const autoColor = getTypographyAutoColor(variant, isDark, theme, variantStyle.color);

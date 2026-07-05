@@ -1,16 +1,16 @@
 import { IconHeart } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import { useIsDark } from '@/components/Hooks/useIsDark';
 import { Card } from '@/components/UI/Card/Card';
 import { ColoredTitle } from '@/components/UI/ColoredTitle/ColoredTitle';
 import { Typography } from '@/components/UI/Typography/Typography';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { aboutPageStyle } from '../styles';
 import { CommunityTechSection } from './CommunityTechSection';
 import { communitySectionStyle } from './styles';
 
 export const CommunitySection = () => {
   const { t } = useTranslation();
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const titleColor = isDark ? aboutPageStyle.whiteText : aboutPageStyle.blackText;
 
   return (

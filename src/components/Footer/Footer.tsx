@@ -5,9 +5,9 @@ import { Box, Container, Text } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import { useNavigationLinks } from '@/components/Hooks/useNavigationLinks';
 import { GITHUB_QUERY_KEY, GITHUB_STALE_TIME } from '@/constants/api.consts';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { githubService } from '@/services/Github/githubService';
 import { theme } from '@/theme';
-import { useIsDark } from '../Hooks/useIsDark';
 import { LinkButton, LinkTarget } from '../UI/Button/LinkButton';
 import { Divider } from '../UI/Divider/Divider';
 import { Grid } from '../UI/Grid/Grid';
@@ -20,7 +20,7 @@ export default function Footer() {
   const { t } = useTranslation();
   const { width } = useViewportSize();
   const isMobileView = width < 1024;
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
 
   const { data: starCount } = useQuery({
     queryKey: [GITHUB_QUERY_KEY],

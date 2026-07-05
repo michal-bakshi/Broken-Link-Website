@@ -1,9 +1,9 @@
 import { IconSearch } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import { useIsDark } from '@/components/Hooks/useIsDark';
 import { Button } from '@/components/UI/Button/Button';
 import { Card } from '@/components/UI/Card/Card';
 import { Typography } from '@/components/UI/Typography/Typography';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { ScanLinkCardProps, ScanMode } from '../types/scan';
 import { RepositoryScanForm } from './RepositoryScanForm';
 import { SingleScanForm } from './SingleScanForm';
@@ -19,7 +19,7 @@ export const ScanLinksCard = ({
   onScan,
 }: ScanLinkCardProps) => {
   const { t } = useTranslation();
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
 
   const isSingleTabActive = scanType === ScanMode.SINGLE;
 

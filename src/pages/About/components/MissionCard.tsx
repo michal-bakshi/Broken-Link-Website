@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { useIsDark } from '@/components/Hooks/useIsDark';
 import { Card } from '@/components/UI/Card/Card';
 import { Typography } from '@/components/UI/Typography/Typography';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { missionCardStyles } from './styles';
 
 interface MissionCardProps {
@@ -10,7 +10,7 @@ interface MissionCardProps {
 }
 
 export const MissionCard = ({ title, description }: MissionCardProps) => {
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const { t } = useTranslation();
   const styles = missionCardStyles(isDark);
   return (

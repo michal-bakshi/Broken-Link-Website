@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { useIsDark } from '@/components/Hooks/useIsDark';
 import { ColoredTitle } from '@/components/UI/ColoredTitle/ColoredTitle';
 import { Typography } from '@/components/UI/Typography/Typography';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { statisticsPageStyle } from './styles';
 
 export const StatisticsTitle = () => {
   const { t } = useTranslation();
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
 
   const statisticTextColor = isDark ? statisticsPageStyle.whiteText : statisticsPageStyle.blackText;
 

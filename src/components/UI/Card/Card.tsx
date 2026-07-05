@@ -1,6 +1,6 @@
 import { CSSProperties, ReactNode } from 'react';
 import { CardProps, Card as MantineCard, rgba } from '@mantine/core';
-import { useIsDark } from '@/components/Hooks/useIsDark';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { theme } from '@/theme';
 import { cardStyles } from './styles';
 
@@ -10,7 +10,7 @@ interface SharedCardProps extends Omit<CardProps, 'style'> {
 }
 
 export const Card = ({ children, className, style, ...props }: SharedCardProps) => {
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const { colors, shadows } = theme;
 
   const themeStyles: CSSProperties = {

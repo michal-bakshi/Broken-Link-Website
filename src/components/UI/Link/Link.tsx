@@ -2,7 +2,7 @@ import { ComponentProps, CSSProperties } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { NavLink } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
-import { useIsDark } from '@/components/Hooks/useIsDark';
+import { useDarkMode } from '@/context/DarkModeContext';
 import { LinkTarget } from '../Button/LinkButton';
 import { defaultHoverColor, linkStyles } from './styles';
 
@@ -41,7 +41,7 @@ export const Link = ({
   ...props
 }: LinkProps) => {
   const { hovered, ref } = useHover();
-  const isDark = useIsDark();
+  const { isDark } = useDarkMode();
   const applyHover = disableHover ? false : hovered;
 
   const isExternal = href.startsWith('http') || target === LinkTarget.Blank || target === '_blank';
